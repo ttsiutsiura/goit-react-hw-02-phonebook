@@ -7,3 +7,8 @@ export const Wrapper = styled.div`
   width: 580px;
   background-color: white;
 `;
+
+export const Caption = styled.b`
+  display: block;
+  text-align: right;
+`;
