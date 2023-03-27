@@ -83,7 +83,7 @@ export class App extends Component {
           <Form onSubmit={this.handleFormSubmit} />
           <Contacts
             contacts={
-              visibleContacts == 0 ? this.state.contacts : visibleContacts
+              visibleContacts.length === 0 ? this.state.contacts : visibleContacts
             }
             value={this.filter}
             onChange={this.changeFilter}
