@@ -82,9 +82,7 @@ export class App extends Component {
           <Caption>Phonebook</Caption>
           <Form onSubmit={this.handleFormSubmit} />
           <Contacts
-            contacts={
-              visibleContacts.length === 0 ? this.state.contacts : visibleContacts
-            }
+            contacts={visibleContacts}
             value={this.filter}
             onChange={this.changeFilter}
             onDeleteContact={this.deleteContact}

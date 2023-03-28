@@ -6,12 +6,17 @@ import { DeleteButton } from 'components/Contacts/Contacts.styled';
 import { nanoid } from 'nanoid';
 import PropTypes from 'prop-types';
 
-export function Contacts({ contacts, value, onChange, onDeleteContact }) {
+export function Contacts({
+  contacts,
+  value,
+  onChange,
+  onDeleteContact,
+}) {
   return (
     <>
-      {contacts.length > 0 && <ContactsCaption>Contacts</ContactsCaption>}
-      {contacts.length > 0 && <Filter value={value} onChange={onChange} />}
-
+      {<ContactsCaption>Contacts</ContactsCaption>}
+      {<Filter value={value} onChange={onChange} />}
+      {contacts.length === 0 && <p style={{ color: 'red' }}>No contacts.</p>}
       <ContactList>
         {contacts.map(contact => (
           <ListItem key={contact.id}>
@@ -31,7 +36,7 @@ export function Contacts({ contacts, value, onChange, onDeleteContact }) {
 }
 
 Contacts.propTypes = {
-  contacts: PropTypes.arrayOf(PropTypes.object),
+  // contacts: PropTypes.arrayOf(PropTypes.object),
   value: PropTypes.string,
   onChange: PropTypes.func.isRequired,
   onDeleteContact: PropTypes.func.isRequired,
