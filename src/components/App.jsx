@@ -37,7 +37,7 @@ export class App extends Component {
     } else if (name.trim() === '' || number.trim() === '') {
       alert("Enter the contact's name and number phone!");
     } else if (!/\d{3}[-]\d{2}[-]\d{2}/g.test(number)) {
-      alert('Enter the correct number phone!');
+      alert('Enter the correct number phone! Format: 123-45-67.');
     } else {
       this.setState(({ contacts }) => ({
         contacts: [contact, ...contacts],
