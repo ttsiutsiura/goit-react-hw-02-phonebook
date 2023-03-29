@@ -6,17 +6,12 @@ import { DeleteButton } from 'components/Contacts/Contacts.styled';
 import { nanoid } from 'nanoid';
 import PropTypes from 'prop-types';
 
-export function Contacts({
-  contacts,
-  value,
-  onChange,
-  onDeleteContact,
-}) {
+export function Contacts({ contacts, value, onChange, onDeleteContact }) {
   return (
     <>
       {<ContactsCaption>Contacts</ContactsCaption>}
       {<Filter value={value} onChange={onChange} />}
-      {contacts.length === 0 && <p style={{ color: 'red' }}>No contacts.</p>}
+      {contacts.length === 0 && <p>No contacts.</p>}
       <ContactList>
         {contacts.map(contact => (
           <ListItem key={contact.id}>
